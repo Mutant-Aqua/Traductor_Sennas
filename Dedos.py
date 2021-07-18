@@ -4,7 +4,7 @@ import os
 
 #-------------------------------------Almacenamiento del entrenamiento----------------------------------
 nombre ='Letra_A'
-direccion ='C:/Users/Aqua_Mutant/Documents/Proyectos_Python/Traductor'
+direccion ='C:/Users/Aqua_Mutant/Documents/Proyectos_Python/Traductor/Clasificacion/Validacion'
 carpeta = direccion + '/' + nombre
 if not os.path.exists(carpeta):
     print('Carpeta creada: ',carpeta)
@@ -55,7 +55,7 @@ while (1):
                 dedos_reg = copia[y1:y2, x1:x2]
                 cv2.rectangle(frame, (x1, y1), (x2, y2), (0, 255, 0), 3)
             dedos_reg = cv2.resize(dedos_reg, (200,200), interpolation=cv2.INTER_CUBIC)
-            cv2.imwrite(nombre+'/Dedos_{}.jpg'.format(cont),dedos_reg)
+            cv2.imwrite(carpeta+'/Dedos_{}.jpg'.format(cont),dedos_reg)
             cont = cont + 1
 
     cv2.imshow("Video",frame)
